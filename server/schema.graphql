@@ -1,0 +1,85 @@
+scalar GraphQLDate
+
+type Training {
+    id: Int!
+    trainer: String!
+    difficulty: Int!
+    title: String!
+    type: String!
+    venue: String!
+    vacancy: Int!
+    date: GraphQLDate!
+    cost: Float!
+    description: String!
+    photoURL: String
+}
+
+input InputTraining {
+    trainer: String!
+    difficulty: Int!
+    title: String!
+    type: String!
+    venue: String!
+    vacancy: Int!
+    date: GraphQLDate!
+    cost: Float!
+    description: String!
+    photoURL: String
+}
+
+type Transaction {
+  id: Int!
+  userId: String!
+  trainerId: String!
+  trainingId: Int!
+  dateReceived: GraphQLDate!
+  cost: Float!
+  type: String!
+}
+
+type Member {
+    id: String!
+    firstName: String!
+    lastName: String!
+    accountType: String!
+    email: String!
+    gender: String!
+    contactNo: Int!
+    username: String!
+    password: String!
+    address: String
+    dob: String
+}
+
+input InputLogin {
+    username: String!
+    password: String!
+    accountType: String!
+}
+
+type Query {
+    listTraining: [Training]!
+    loginMember(loginAcc: InputLogin!): String!
+    getTrainingById(id: Int!): Training
+    checkUsername(username: String!): Boolean!
+    getTransactionsByMemberId(userId: String!): [Transaction]!
+}
+
+
+type Mutation {
+  addTraining(newTraining: InputTraining!): Training!
+  addMember(newMember: InputMember!): Member!
+}
+
+input InputMember {
+  firstName: String!
+  lastName: String!
+  accountType: String!
+  email: String!
+  gender: String!
+  contactNo: String!
+  username: String!
+  password: String!
+  address: String
+  dob: String
+}

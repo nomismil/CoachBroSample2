@@ -1,0 +1,43 @@
+{
+  "name": "coachbro",
+  "version": "1.0.0",
+  "description": "coachbro Project IT5007",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w server -w src -e js, graphql server/server.js",
+    "compile": "babel src --out-dir public",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IT5007-2220/course-project-project-group-9.git"
+  },
+  "author": "goh.yenther@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IT5007-2220/course-project-project-group-9/issues"
+  },
+  "homepage": "https://github.com/IT5007-2220/course-project-project-group-9#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.3.1",
+    "express": "^4.16.4",
+    "graphql": "^0.13.2",
+    "mongodb": "^3.1.10",
+    "nodemon": "^1.18.9",
+    "react": "^18.2.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
